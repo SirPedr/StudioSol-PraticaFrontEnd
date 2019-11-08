@@ -29,19 +29,7 @@ class TicTacToeGrid {
         cellDOMEl.innerHTML = '';
         cellDOMEl.dataset.rowNumber = rowPosition;
         cellDOMEl.dataset.colNumber = colPosition;
-
-        const gameGridCell = new GameGridCell(cellDOMEl, {});
-
-        gameGridCell.cell.addEventListener('click', () => {
-            this.handleCellClick(gameGridCell);
-        })
-
-        const gridCellPosition = {row: rowPosition, col: colPosition}
         
-        return new GameGridCell(cellDOMEl, gridCellPosition);
-    }
-
-    handleCellClick(gridCell) {
-        gridCell.mark("A");
+        return new GameGridCell(cellDOMEl);
     }
 }
