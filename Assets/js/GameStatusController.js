@@ -1,6 +1,6 @@
 class GameStatusController {
-    constructor(DOMReferenceElement) {
-        this.domElement = DOMReferenceElement;
+    constructor() {
+        
     }
 
     updateElementWithGameState(currentGameState) {
