@@ -1,14 +1,23 @@
+body {
+    background-color: #E5E5E5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
 main {
+    padding: 1em;
+    background-color: #FFFFFF;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    row-gap: .5em;
-    column-gap: .5em;
+    width: 50vw;;
 }
 
 main span {
-    background-color: red;
     cursor: pointer;
+    text-align: center;
     border: 3px solid #AABDC6;
 }
 
