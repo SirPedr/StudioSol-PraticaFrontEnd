@@ -36,3 +36,7 @@ main span:nth-of-type(-n + 3) {
 main span:nth-last-of-type(-n + 3) {
     border-bottom: none;
 }
+
+#gameStateDisplay {
+    background-color: #FF3266;
+}

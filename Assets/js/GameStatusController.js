@@ -4,7 +4,7 @@ class GameStatusController {
     }
 
     updateElementWithGameState(currentGameState) {
-        const gameStateDOMRepresentation = document.getElementById('gameState');
+        const gameStateDOMRepresentation = document.getElementById('gameStateDisplay');
 
         if(currentGameState.isRunning) {
             const currentPlayer = currentGameState.currentPlayer,
