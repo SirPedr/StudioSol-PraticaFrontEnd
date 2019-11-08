@@ -5,12 +5,6 @@ class TicTacToeGame {
         this.secondPlayer = secondPlayer;
         this.currentPlayer = firstPlayer;
 
-        this.currentGameState = {
-            isRunning: true,
-            hasWinner: false,
-            currentPlayer: this.currentPlayer
-        }
-
         this.gameStateObservers = [];
 
         this.gameTable.gameGrid
@@ -20,6 +14,7 @@ class TicTacToeGame {
                 })
             })
 
+        this.updateGameState(true, false, this.currentPlayer);
 
     }
 
