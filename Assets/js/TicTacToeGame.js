@@ -5,6 +5,14 @@ class TicTacToeGame {
         this.secondPlayer = secondPlayer;
         this.currentPlayer = firstPlayer; 
 
+        this.currentGameState = {
+            isRunning: true,
+            hasWinner: false,
+            currentPlayer: this.currentPlayer
+        }
+
+        this.gameStateObservers = [];
+
         this.gameTable.gameGrid
         .map(tableRow => {
             tableRow.map(tableCell => {
@@ -16,6 +24,7 @@ class TicTacToeGame {
     attachCellClickEvent(gridCell) {
         gridCell.cell.addEventListener('click', () => {
             this.handleCellClick(gridCell);
+            console.log("Vez de " + this.currentPlayer.name + ` (${this.currentPlayer.symbol})`);
         })
     }
 
@@ -23,6 +32,7 @@ class TicTacToeGame {
         const wasCellMarked = clickedCell.mark(this.currentPlayer.symbol);
         if(wasCellMarked) {
             this.switchCurrentPlayer();
+            this.updateGameState(true, false, this.currentPlayer);
         }
     }
 
@@ -32,5 +42,20 @@ class TicTacToeGame {
         } else {
             this.currentPlayer = this.firstPlayer;
         }
+
+
+    }
+
+    updateGameState(isGameRunning, gameHasWinner, currentPlayer) {
+        this.currentGameState = {
+            isRunning: isGameRunning,
+            hasWinner: gameHasWinner,
+            currentPlayer, currentPlayer
+        }
+
+        this.gameStateObservers
+        .map(observerNotifyMethod => observerNotifyMethod(this.currentGameState));
+
+        return this.currentGameState;
     }
 }
