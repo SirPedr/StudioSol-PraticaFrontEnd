@@ -15,21 +15,33 @@ class TicTacToeGrid {
 
         for(let i = 0; i < this.gridSize; i++) {
             for(let j = 0; j < this.gridSize; j++) {
-                const cellDOMEl = document.createElement('span');
+                const gameGridCell = this.createGridCell(i, j);
 
-                cellDOMEl.innerHTML = 'X';
-                cellDOMEl.dataset.rowNumber = i;
-                cellDOMEl.dataset.colNumber = j;
-                
-                gameGrid[i][j] = new GameGridCell(cellDOMEl);
-                gridDOMEl.appendChild(cellDOMEl);
-                
+                gameGrid[i][j] = gameGridCell;
+                gridDOMEl.appendChild(gameGridCell.cell);
             }
         }
     }
-}
 
-//Debug
-const ttt = new TicTacToeGrid(3);
-ttt.gameGrid[0][2].mark('otorrinolaringologia');
-console.log(ttt.gameGrid);
+    createGridCell(rowPosition, colPosition) {
+        const cellDOMEl = document.createElement('span');
+        
+        cellDOMEl.innerHTML = '';
+        cellDOMEl.dataset.rowNumber = rowPosition;
+        cellDOMEl.dataset.colNumber = colPosition;
+
+        const gameGridCell = new GameGridCell(cellDOMEl, {});
+
+        gameGridCell.cell.addEventListener('click', () => {
+            this.handleCellClick(gameGridCell);
+        })
+
+        const gridCellPosition = {row: rowPosition, col: colPosition}
+        
+        return new GameGridCell(cellDOMEl, gridCellPosition);
+    }
+
+    handleCellClick(gridCell) {
+        gridCell.mark("A");
+    }
+}
