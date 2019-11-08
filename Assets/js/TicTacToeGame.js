@@ -3,7 +3,7 @@ class TicTacToeGame {
         this.gameTable = gameGrid;
         this.firstPlayer = firstPlayer;
         this.secondPlayer = secondPlayer;
-        this.currentPlayer = firstPlayer; 
+        this.currentPlayer = firstPlayer;
 
         this.currentGameState = {
             isRunning: true,
@@ -14,30 +14,32 @@ class TicTacToeGame {
         this.gameStateObservers = [];
 
         this.gameTable.gameGrid
-        .map(tableRow => {
-            tableRow.map(tableCell => {
-                this.attachCellClickEvent(tableCell);
+            .map(tableRow => {
+                tableRow.map(tableCell => {
+                    this.attachCellClickEvent(tableCell);
+                })
             })
-        })
+
+
     }
 
     attachCellClickEvent(gridCell) {
         gridCell.cell.addEventListener('click', () => {
             this.handleCellClick(gridCell);
-            console.log("Vez de " + this.currentPlayer.name + ` (${this.currentPlayer.symbol})`);
         })
     }
 
     handleCellClick(clickedCell) {
         const wasCellMarked = clickedCell.mark(this.currentPlayer.symbol);
-        if(wasCellMarked) {
+
+        if (wasCellMarked) {
             this.switchCurrentPlayer();
             this.updateGameState(true, false, this.currentPlayer);
         }
     }
 
     switchCurrentPlayer() {
-        if(this.currentPlayer.symbol === this.firstPlayer.symbol) {
+        if (this.currentPlayer.symbol === this.firstPlayer.symbol) {
             this.currentPlayer = this.secondPlayer;
         } else {
             this.currentPlayer = this.firstPlayer;
@@ -54,7 +56,7 @@ class TicTacToeGame {
         }
 
         this.gameStateObservers
-        .map(observerNotifyMethod => observerNotifyMethod(this.currentGameState));
+            .map(observerNotifyMethod => observerNotifyMethod(this.currentGameState));
 
         return this.currentGameState;
     }
