@@ -20,8 +20,10 @@ class TicTacToeGame {
     }
 
     handleCellClick(clickedCell) {
-        clickedCell.mark(this.currentPlayer.symbol);
-        this.alternateTurn();
+        const wasCellMarked = clickedCell.mark(this.currentPlayer.symbol);
+        if(wasCellMarked) {
+            this.alternateTurn();
+        }
     }
 
     alternateTurn() {

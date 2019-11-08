@@ -8,6 +8,10 @@ class GameGridCell {
         if(!this.isFilled) {
             this.cell.innerHTML = symbol;
             this.isFilled = true;
+
+            return true;
         }
+
+        return false;
     }
 }
