@@ -9,4 +9,21 @@ main {
 main span {
     background-color: red;
     cursor: pointer;
+    border: 3px solid #AABDC6;
+}
+
+main span:nth-of-type(3n + 1) {
+    border-left: none;
+}
+
+main span:nth-of-type(3n + 0) {
+    border-right: none;
+}
+
+main span:nth-of-type(-n + 3) {
+    border-top: none; 
+}
+
+main span:nth-last-of-type(-n + 3) {
+    border-bottom: none;
 }
