@@ -1,0 +1,12 @@
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: .5em;
+    column-gap: .5em;
+}
+
+main span {
+    background-color: red;
+    cursor: pointer;
+}
