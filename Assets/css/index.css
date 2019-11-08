@@ -12,10 +12,10 @@ main {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    width: 50vw;;
 }
 
 main span {
+    padding: 2em;
     cursor: pointer;
     text-align: center;
     border: 3px solid #AABDC6;
