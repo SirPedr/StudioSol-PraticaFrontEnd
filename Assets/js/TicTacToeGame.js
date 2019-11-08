@@ -25,7 +25,7 @@ class TicTacToeGame {
     }
 
     handleCellClick(clickedCell) {
-        const wasCellMarked = clickedCell.mark(this.currentPlayer.symbol);
+        const wasCellMarked = clickedCell.mark(this.currentPlayer);
 
         if (wasCellMarked) {
             this.switchCurrentPlayer();

@@ -4,9 +4,10 @@ class GameGridCell {
         this.isFilled = false;
     }
 
-    mark(symbol) {
+    mark(player) {
         if(!this.isFilled) {
-            this.cell.innerHTML = symbol;
+            this.cell.innerHTML = player.symbol;
+            this.cell.style.color = player.referenceColor;
             this.isFilled = true;
 
             return true;
