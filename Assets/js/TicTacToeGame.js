@@ -128,4 +128,18 @@ class TicTacToeGame {
 
         return this.currentGameState;
     }
+
+    resetGame() {
+        const playerRandomIndex = RandomUtil.getRandomIntInRange(0, 2);
+        let nextPlayer;
+
+        if(playerRandomIndex % 2 == 0) {
+            nextPlayer = this.firstPlayer;
+        } else {
+            nextPlayer = this.secondPlayer;
+        }
+
+        this.gameTable.clearTable();
+        this.updateGameState(true, false, nextPlayer);
+    }
 }

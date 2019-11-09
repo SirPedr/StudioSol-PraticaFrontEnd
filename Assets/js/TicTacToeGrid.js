@@ -117,5 +117,13 @@ class TicTacToeGrid {
 
         return gridCells;
     }
+
+    clearTable() {
+        this.gameGrid
+        .map(tableRow => {
+            tableRow.map(tableCell => {
+                tableCell.clearCell();
+            })
+        })
     }
 }

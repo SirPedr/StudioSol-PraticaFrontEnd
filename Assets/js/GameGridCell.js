@@ -20,6 +20,11 @@ class GameGridCell {
         return false;
     }
 
+    clearCell() {
+        this.cell.innerHTML = '';
+        this.isFilled = false;
+    }
+
     static getValidCellsValues(gridCells) {
         return gridCells
             .filter(gridCell => gridCell.isFilled)
