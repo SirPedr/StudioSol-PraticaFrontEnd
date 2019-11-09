@@ -2,7 +2,7 @@ class TicTacToeGrid {
     constructor(gridSize = 3) {
         this.gameGrid = [];
         this.gridSize = gridSize;
-        
+
         for(let i = 0; i < gridSize; i++) {
             this.gameGrid[i] = [];
         }
@@ -32,4 +32,39 @@ class TicTacToeGrid {
         
         return new GameGridCell(cellDOMEl);
     }
+
+    getGridCol(colNumber) {
+        if(colNumber > this.gridSize - 1)
+            return [];
+
+        const requestedColCells = [];
+
+        this.gameGrid
+            .map(tableRow => {
+               tableRow
+               .map((tableCell, colIndex) => {
+                   if(colIndex === colNumber)
+                    requestedColCells.push(tableCell);
+                });
+            });
+        
+        return requestedColCells;
+    }
+
+    getGridRow(rowNumber) {
+        if(rowNumber > this.gridSize - 1)
+            return [];
+
+        const requestedRowCells = [];
+
+        this.gameGrid
+            .map((tableRow, rowIndex) => {
+                if(rowIndex === rowNumber) {
+                    requestedRowCells.push(...tableRow);
+                }
+            });
+
+        return requestedRowCells;
+    }
+
 }
