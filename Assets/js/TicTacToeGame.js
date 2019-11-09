@@ -40,7 +40,7 @@ class TicTacToeGame {
             const gameCurrentState = this.hasWinner();
 
             if (gameCurrentState.hasWinner) {
-                gameCurrentState.currentPlayer.increaseScore();
+                gameCurrentState.currentPlayer.statistics.increaseScore();
                 this.gameTable.highlightGridCells(gameCurrentState.winnerCells, gameCurrentState.currentPlayer.referenceColor);
             } 
         }
@@ -145,5 +145,13 @@ class TicTacToeGame {
 
         this.gameTable.clearTable();
         this.updateGameState(true, false, this.currentPlayer);
+    }
+
+    getStatistics() {
+        return {
+            firstPlayer: this.firstPlayer,
+            secondPlayer: this.secondPlayer,
+            totalGameTime: this.firstPlayer.statistics.totalTimeSpent + this.secondPlayer.statistics.totalTimeSpent
+        }
     }
 }
