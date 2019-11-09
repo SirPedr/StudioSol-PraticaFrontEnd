@@ -39,6 +39,7 @@ class TicTacToeGame {
 
             if (gameCurrentState.hasWinner) {
                 console.log(`VENCEDOR: ${gameCurrentState.currentPlayer.name}`);
+                this.gameTable.highlightGridCells(gameCurrentState.winnerCells, gameCurrentState.currentPlayer.referenceColor);
             } else if (!gameCurrentState.isRunning) {
                 console.log("EMPATE");
             }

@@ -32,6 +32,16 @@ class TicTacToeGrid {
         return new GameGridCell(cellDOMEl);
     }
 
+    highlightGridCells(gridCellsToHighlight, colorToHighlight) {
+        this.getAllGridCells().forEach(gridCell =>
+             gridCell.cell.style.color = 'AABDC6'
+        );
+
+        gridCellsToHighlight.forEach(gridCell => 
+            gridCell.cell.style.color = colorToHighlight
+        );
+    }
+
     getGridCol(colNumber) {
         if(colNumber > this.gridSize - 1)
             return [];
