@@ -27,7 +27,7 @@ class TicTacToeGame {
     }
 
     handleCellClick(clickedCell) {
-        if(this.currentGameState.hasWinner)
+        if(!this.currentGameState.isRunning)
             return;
 
         const wasCellMarked = clickedCell.mark(this.currentPlayer);
