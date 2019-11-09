@@ -57,12 +57,7 @@ class TicTacToeGame {
     }
 
     hasWinner() {
-        const gridSize = this.gameTable.gridSize,
-              fullGameTableCells = this.gameTable.getAllGridCells();
-
-        if(GameGridCell.getValidCellsValues(fullGameTableCells).length === gridSize * gridSize) {
-            return this.updateGameState(false, false, this.currentPlayer);
-        }
+        const gridSize = this.gameTable.gridSize;        
         
         let winnerCells = [],
             tableHasElementsInSequence = false;
@@ -105,8 +100,15 @@ class TicTacToeGame {
             tableHasElementsInSequence = true;
         }
 
+
+        const fullGameTableCells = this.gameTable.getAllGridCells();
+
         if (tableHasElementsInSequence) {
             return this.updateGameState(false, true, this.playerWhoMadeLastMove, winnerCells);
+
+        } else if(GameGridCell.getValidCellsValues(fullGameTableCells).length === gridSize * gridSize) {
+            return this.updateGameState(false, false, this.currentPlayer);
+
         } else {
             return this.updateGameState(true, false, this.currentPlayer);
         }
