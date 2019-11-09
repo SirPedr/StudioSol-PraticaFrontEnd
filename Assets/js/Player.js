@@ -3,11 +3,6 @@ class Player {
         this.name = playerName;
         this.symbol = symbol;
         this.referenceColor = referenceColor;
-        this.score = 0;
         this.statistics = new PlayerStatistics(this);
-    }
-
-    increaseScore() {
-        this.score += 1;
     }
 }

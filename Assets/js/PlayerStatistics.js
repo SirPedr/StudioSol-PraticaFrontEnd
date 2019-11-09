@@ -6,8 +6,13 @@ class PlayerStatistics {
         this.initialMoveTime = 0;
         this.finalMoveTime = 0;
         this.averageMoveTimeSpent = 0;
+        this.score = 0;
     }
 
+    increaseScore() {
+        this.score += 1;
+    }
+    
     startMoveTimeCount() {
         this.initialMoveTime = Date.now();
     }
