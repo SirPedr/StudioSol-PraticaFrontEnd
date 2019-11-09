@@ -34,3 +34,16 @@ savePlayerNamesBtn.addEventListener('click', () => {
     firstPlayerNameInputController.updatePlayerName();
     secondPlayerNameInputController.updatePlayerName(); 
 })
+
+const showStatisticsModalBtn = document.getElementById('showStatisticsModalBtn'),
+      statisticsModalController = new StatisticsModalController(),
+      closeStatisticsModalBtn = document.getElementById('closeStatisticsModalBtn');
+
+showStatisticsModalBtn.addEventListener('click', () => {
+    statisticsModalController.openStatisticsModal();
+    statisticsModalController.updateGameStatistics(ticTacToeGame.getStatistics());
+})
+
+closeStatisticsModalBtn.addEventListener('click', () => {
+    statisticsModalController.closeStatisticsModal();
+})
