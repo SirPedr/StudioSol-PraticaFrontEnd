@@ -11,3 +11,26 @@ const resetGameBtn = document.getElementById('resetGameBtn');
 resetGameBtn.addEventListener('click', () => {
     ticTacToeGame.resetGame();
 })
+
+
+const openPlayerNameInputsBtn = document.getElementById('openPlayerNameInputsBtn'),
+      closePlayerNameInputsBtn = document.getElementById('closePlayerNamesModal'),
+      changePlayerNamesModal = document.getElementById('changePlayerNamesModal');
+
+openPlayerNameInputsBtn.addEventListener('click', () => {
+    changePlayerNamesModal.style.display = 'inline';
+})
+
+closePlayerNameInputsBtn.addEventListener('click', () => {
+    changePlayerNamesModal.style.display = 'none';
+})
+
+const playerNameInputs = document.querySelectorAll('.playerNameInput'),
+      firstPlayerNameInputController = new PlayerNameInputController(firstPlayer, playerNameInputs[0]),
+      secondPlayerNameInputController = new PlayerNameInputController(secondPlayer, playerNameInputs[1]),
+      savePlayerNamesBtn = document.getElementById('savePlayerNamesBtn');
+
+savePlayerNamesBtn.addEventListener('click', () => {
+    firstPlayerNameInputController.updatePlayerName();
+    secondPlayerNameInputController.updatePlayerName(); 
+})
