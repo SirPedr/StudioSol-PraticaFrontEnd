@@ -5,6 +5,7 @@ class TicTacToeGame {
         this.secondPlayer = secondPlayer;
 
         this.currentPlayer = firstPlayer;
+        this.currentPlayer.statistics.startMoveTimeCount();
         this.playerWhoMadeLastMove = secondPlayer;
 
         this.gameStateObservers = [];
@@ -17,7 +18,7 @@ class TicTacToeGame {
             })
 
         this.updateGameState(true, false, this.currentPlayer);
-
+        
     }
 
     attachCellClickEvent(gridCell) {
@@ -33,16 +34,15 @@ class TicTacToeGame {
         const wasCellMarked = clickedCell.mark(this.currentPlayer);
 
         if (wasCellMarked) {
+            this.currentPlayer.statistics.stopMoveTimeCount();
             this.switchCurrentPlayer();
 
             const gameCurrentState = this.hasWinner();
 
             if (gameCurrentState.hasWinner) {
-                console.log(`VENCEDOR: ${gameCurrentState.currentPlayer.name}`);
+                gameCurrentState.currentPlayer.increaseScore();
                 this.gameTable.highlightGridCells(gameCurrentState.winnerCells, gameCurrentState.currentPlayer.referenceColor);
-            } else if (!gameCurrentState.isRunning) {
-                console.log("EMPATE");
-            }
+            } 
         }
     }
 
@@ -54,6 +54,8 @@ class TicTacToeGame {
             this.currentPlayer = this.firstPlayer;
             this.playerWhoMadeLastMove = this.secondPlayer;
         }
+
+        this.currentPlayer.statistics.startMoveTimeCount();
     }
 
     hasWinner() {

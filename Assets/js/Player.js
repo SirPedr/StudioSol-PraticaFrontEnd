@@ -6,5 +6,8 @@ class Player {
         this.score = 0;
         this.statistics = new PlayerStatistics(this);
     }
+
+    increaseScore() {
+        this.score += 1;
     }
 }
