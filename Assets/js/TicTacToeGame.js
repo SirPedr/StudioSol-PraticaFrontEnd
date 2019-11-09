@@ -141,7 +141,9 @@ class TicTacToeGame {
             nextPlayer = this.secondPlayer;
         }
 
+        this.currentPlayer = nextPlayer;
+
         this.gameTable.clearTable();
-        this.updateGameState(true, false, nextPlayer);
+        this.updateGameState(true, false, this.currentPlayer);
     }
 }
