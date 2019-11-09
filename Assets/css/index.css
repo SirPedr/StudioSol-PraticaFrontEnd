@@ -44,3 +44,17 @@ main span:nth-last-of-type(-n + 3) {
 #changePlayerNamesModal {
     display: none;
 }
+
+#statisticsModal, #statisticsModal article {
+    text-align: center;
+}
+
+#statisticsModal article{
+    display: flex;
+    justify-content: space-between;
+}
+
+#statisticsModal article:last-of-type {
+    justify-content: center;
+    flex-direction: column;
+}
