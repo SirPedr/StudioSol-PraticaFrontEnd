@@ -13,6 +13,6 @@ class DateFormatUtil {
 
         return (hours > 0 ? hours + "h" : '')
             + (minutes > 0 ? minutes + "m" : '')
-            + seconds + "s";
+            + (minutes > 0 ? Math.floor(seconds) : seconds.toFixed(1)) + "s";
     }
 }
