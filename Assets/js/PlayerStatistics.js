@@ -1,14 +1,11 @@
 class PlayerStatistics {
     constructor(player) {
         this.player = player;
-        this.totalMovesAmount = 0;
         this.timeSpentWithMoves = [];
+        this.totalTimeSpent = 0;
         this.initialMoveTime = 0;
         this.finalMoveTime = 0;
-    }
-
-    increaseMovesAmount() {
-        this.totalMovesAmount += 1;
+        this.averageMoveTimeSpent = 0;
     }
 
     startMoveTimeCount() {
@@ -17,10 +14,20 @@ class PlayerStatistics {
 
     stopMoveTimeCount() {
         this.finalMoveTime = Date.now();
-        
+
         const timeSpentWithMove = (this.finalMoveTime - this.initialMoveTime) / 1000;
 
         this.timeSpentWithMoves.push(timeSpentWithMove);
-        this.increaseMovesAmount();
+        this.calculateAverageMoveTimeSpent();
+        this.calculateTotalTimeSpentWithMoves();
+    }
+
+    calculateAverageMoveTimeSpent() {
+        this.averageMoveTimeSpent = ArrayUtil.getElementsAverage(this.timeSpentWithMoves);
+    }
+
+    calculateTotalTimeSpentWithMoves() {
+        this.totalTimeSpent = this.timeSpentWithMoves
+                              .reduce((moveTime, totalTime) => moveTime + totalTime, 0);
     }
 }
