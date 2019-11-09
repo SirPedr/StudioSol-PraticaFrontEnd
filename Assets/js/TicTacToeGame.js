@@ -39,6 +39,8 @@ class TicTacToeGame {
 
             if (gameCurrentState.hasWinner) {
                 console.log(`VENCEDOR: ${gameCurrentState.currentPlayer.name}`);
+            } else if (!gameCurrentState.isRunning) {
+                console.log("EMPATE");
             }
         }
     }
@@ -54,8 +56,13 @@ class TicTacToeGame {
     }
 
     hasWinner() {
-        const gridSize = this.gameTable.gridSize;
+        const gridSize = this.gameTable.gridSize,
+              fullGameTableCells = this.gameTable.getAllGridCells();
 
+        if(GameGridCell.getValidCellsValues(fullGameTableCells).length === gridSize * gridSize) {
+            return this.updateGameState(false, false, this.currentPlayer);
+        }
+        
         let winnerCells = [],
             tableHasElementsInSequence = false;
 

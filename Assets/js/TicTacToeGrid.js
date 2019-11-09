@@ -16,7 +16,6 @@ class TicTacToeGrid {
         for(let rowPosition = 0; rowPosition < this.gridSize; rowPosition++) {
             for(let colPosition = 0; colPosition < this.gridSize; colPosition++) {
                 const gameGridCell = this.createGridCell(rowPosition, colPosition);
-
                 gameGrid[rowPosition][colPosition] = gameGridCell;
                 gridDOMEl.appendChild(gameGridCell.cell);
             }
@@ -98,5 +97,15 @@ class TicTacToeGrid {
         
         return secondaryDiagonalCells;
         
+    }
+
+    getAllGridCells() {
+        const gridCells = [];
+
+        this.gameGrid
+        .map(tableRow => gridCells.push(...tableRow));
+
+        return gridCells;
+    }
     }
 }
