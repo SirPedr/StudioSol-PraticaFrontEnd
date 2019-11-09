@@ -47,7 +47,7 @@ class TicTacToeGame {
         this.currentGameState = {
             isRunning: isGameRunning,
             hasWinner: gameHasWinner,
-            currentPlayer, currentPlayer
+            currentPlayer: currentPlayer
         }
 
         this.gameStateObservers
