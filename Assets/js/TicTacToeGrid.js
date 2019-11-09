@@ -67,4 +67,36 @@ class TicTacToeGrid {
         return requestedRowCells;
     }
 
+    getGridMainDiagonal() {
+        const mainDiagonalCells = [];
+
+        this.gameGrid
+            .map((tableRow, rowIndex) => {
+                tableRow
+                .map((tableCell, colIndex) => {
+                    if(rowIndex === colIndex) {
+                        mainDiagonalCells.push(tableCell);
+                    }
+                })
+            });
+        
+        return mainDiagonalCells;
+    }
+
+    getGridSecondaryDiagonal() {
+        const secondaryDiagonalCells = [];
+
+        this.gameGrid
+            .map((tableRow, rowIndex) => {
+                tableRow
+                .map((tableCell, colIndex) => {
+                    if(rowIndex + colIndex === this.gridSize - 1) {
+                        secondaryDiagonalCells.push(tableCell);
+                    }
+                })
+            });
+        
+        return secondaryDiagonalCells;
+        
+    }
 }
