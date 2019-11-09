@@ -5,3 +5,9 @@ const ticTacToeGrid = new TicTacToeGrid(3),
       ticTacToeGame = new TicTacToeGame(ticTacToeGrid, firstPlayer, secondPlayer);
 
 ticTacToeGame.gameStateObservers.push(gameStateController.updateElementWithGameState);
+
+const resetGameBtn = document.getElementById('resetGameBtn');
+
+resetGameBtn.addEventListener('click', () => {
+    ticTacToeGame.resetGame();
+})
