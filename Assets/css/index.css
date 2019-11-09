@@ -40,3 +40,7 @@ main span:nth-last-of-type(-n + 3) {
 #gameStateDisplay {
     background-color: #FF3266;
 }
+
+#changePlayerNamesModal {
+    display: none;
+}
