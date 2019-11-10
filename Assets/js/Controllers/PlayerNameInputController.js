@@ -6,9 +6,9 @@ class PlayerNameInputController {
     }
 
     updatePlayerName() {
-        const newPlayerName = this.referenceDOMInput.value.replace(/\s+/g, '');
+        const newPlayerName = this.referenceDOMInput.value;
         
-        if(newPlayerName != '')
+        if(newPlayerName.replace(/\s+/g, '') != '')
             this.referencePlayer.name =  newPlayerName;
     }
 
