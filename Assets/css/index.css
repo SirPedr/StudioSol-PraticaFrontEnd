@@ -5,6 +5,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    color: #34515E;
 }
 main {
     padding: 1em;
@@ -35,6 +36,14 @@ main span:nth-of-type(-n + 3) {
 
 main span:nth-last-of-type(-n + 3) {
     border-bottom: none;
+}
+
+h1 {
+    text-transform: uppercase;
+}
+
+h1, h2 {
+    font-family: 'Roboto';
 }
 
 #gameStateDisplay {
