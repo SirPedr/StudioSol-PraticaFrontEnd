@@ -2,10 +2,6 @@ class GameGridCell {
     constructor(cell) {
         this.cell = cell;
         this.isFilled = false;
-        this.position = {
-            row: parseInt(cell.dataset.rowNumber),
-            col: parseInt(cell.dataset.colNumber)
-        };
     }
 
     mark(player) {
