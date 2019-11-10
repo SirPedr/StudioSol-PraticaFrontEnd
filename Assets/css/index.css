@@ -1,10 +1,13 @@
 :root {
     --firstPlayerMainColor: #FF3266;
     --secondPlayerMainColor: #30CB76;
-    --hoverAndTextMainColor: #34515E;
+    --hoverBtnColor: #34515E;
+    --textMainColor: #34515E;
     --subTextColor: #607D8B;
     --inactiveElementColor: #AABDC6;
-    --backgroundAndHighilightTextColor: #FFFFFF; 
+    --backgroundMainColor: #E5E5E5;
+    --highlightTextColor: #FFFFFF; 
+    --backgorundMainColor: #FFFFFF;
 }
 
 body {
