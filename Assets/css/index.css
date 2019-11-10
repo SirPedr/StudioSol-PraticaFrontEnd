@@ -55,13 +55,18 @@ h1, h2 {
     font-family: 'Roboto';
 }
 
+.modal {
+    display: none;
+    position: absolute;
+    background: #FFFFFF;
+}
+
 #gameStateDisplay {
     background-color: #FF3266;
 }
 
 #changePlayerNamesModal, #statisticsModal {
-    display: none;
-    position: absolute;
+
 }
 
 #statisticsModal, #statisticsModal article {
