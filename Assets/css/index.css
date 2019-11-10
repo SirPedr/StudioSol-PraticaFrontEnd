@@ -1,3 +1,12 @@
+:root {
+    --firstPlayerMainColor: #FF3266;
+    --secondPlayerMainColor: #30CB76;
+    --hoverAndTextMainColor: #34515E;
+    --subTextColor: #607D8B;
+    --inactiveElementColor: #AABDC6;
+    --backgroundAndHighilightTextColor: #FFFFFF; 
+}
+
 body {
     background-color: #E5E5E5;
     display: flex;
