@@ -21,7 +21,7 @@ class GameStatusController {
 
         } else if (!currentGameState.hasWinner) {
             gameStateDOMRepresentation.innerHTML = 'Empate!'
-            gameStateDOMRepresentation.style.backgroundColor = '#FFCD07';
+            gameStateDOMRepresentation.style.backgroundColor = '#EDAF10';
 
         } else {
             playerDisplayName.innerHTML = currentGameState.currentPlayer.name;
