@@ -50,8 +50,9 @@ h1, h2 {
     background-color: #FF3266;
 }
 
-#changePlayerNamesModal {
+#changePlayerNamesModal, #statisticsModal {
     display: none;
+    position: absolute;
 }
 
 #statisticsModal, #statisticsModal article {
