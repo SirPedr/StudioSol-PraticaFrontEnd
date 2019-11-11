@@ -37,10 +37,13 @@ button {
 main {
     font-family: 'Fredoka One', cursive;
     padding: 1em;
-    background-color: #FFFFFF;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px -1px rgba(0,0,0,0.75);
+    background-color: #FFFFFF;
+    z-index: 5;
 }
 
 main span {
