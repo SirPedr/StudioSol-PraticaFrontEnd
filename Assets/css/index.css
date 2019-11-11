@@ -51,6 +51,8 @@ main span {
     cursor: pointer;
     text-align: center;
     border: 3px solid #AABDC6;
+  min-width: calc(20px + 0.1vw);
+  min-height: calc(20px + 0.1vh);
 }
 
 main span:nth-of-type(3n + 1) {
