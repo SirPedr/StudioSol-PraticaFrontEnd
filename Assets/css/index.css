@@ -21,6 +21,25 @@ body {
     color: var(--textMainColor);
 }
 
+button {
+    text-transform: uppercase;
+    font-family: 'Roboto Mono', sans-serif;
+    font-weight: 900;
+    margin: 0vw .5vw;
+    color: inherit;
+    background-color: transparent;
+    border: 2px solid var(--hoverBtnColor);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 200ms;
+}
+
+
+button:hover {
+    background-color: var(--hoverBtnColor);
+    color: var(--highlightTextColor);
+}
+
 main {
     padding: 1em;
     background-color: #FFFFFF;
@@ -70,8 +89,17 @@ h1, h2 {
     background-color: var(--firstPlayerMainColor);
 }
 
-#changePlayerNamesModal, #statisticsModal {
+#openPlayerNameInputsBtn {
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 1vw;
+    border: none;
+    text-decoration: underline;
+}
 
+#openPlayerNameInputsBtn:hover {
+    background-color: transparent;
+    color: inherit;
 }
 
 #statisticsModal, #statisticsModal article {
