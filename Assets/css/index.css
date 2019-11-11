@@ -41,6 +41,7 @@ button:hover {
 }
 
 main {
+    font-family: 'Fredoka One', cursive;
     padding: 1em;
     background-color: #FFFFFF;
     display: grid;
@@ -86,7 +87,9 @@ h1, h2 {
 }
 
 #gameStateDisplay {
+    font-family: 'Roboto Mono', monospace;
     background-color: var(--firstPlayerMainColor);
+    color: var(--highlightTextColor);
 }
 
 #openPlayerNameInputsBtn {
