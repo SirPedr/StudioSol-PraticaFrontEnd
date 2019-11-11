@@ -100,9 +100,15 @@ h1, h2 {
 }
 
 #gameStateDisplay {
+    text-align: center;
+    position: relative;
+    top: -2em;
+    padding:  2em 1em 1em 1em;
+    border-radius: 15px;
     font-family: 'Roboto Mono', monospace;
     background-color: var(--firstPlayerMainColor);
     color: var(--highlightTextColor);
+    z-index: -1;
 }
 
 #openPlayerNameInputsBtn {
