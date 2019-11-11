@@ -33,8 +33,10 @@ class TicTacToeGrid {
     }
 
     highlightGridCells(gridCellsToHighlight, colorToHighlight) {
+        const cssVariables = getComputedStyle(document.body);
+
         this.getAllGridCells().forEach(gridCell =>
-             gridCell.cell.style.color = 'AABDC6'
+             gridCell.cell.style.color = cssVariables.getPropertyValue("--inactiveElementColor")
         );
 
         gridCellsToHighlight.forEach(gridCell => 

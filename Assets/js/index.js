@@ -1,7 +1,9 @@
+const cssVariables = getComputedStyle(document.body);
+
 const ticTacToeGrid = new TicTacToeGrid(3),
       gameStateController = new GameStatusController(),
-      firstPlayer = new Player("Jogador 1", "X", "#FF3266"),
-      secondPlayer = new Player("Jogador 2", "O", "#30CB76"),
+      firstPlayer = new Player("Jogador 1", "X", cssVariables.getPropertyValue("--firstPlayerMainColor")),
+      secondPlayer = new Player("Jogador 2", "O", cssVariables.getPropertyValue("--secondPlayerMainColor")),
       ticTacToeGame = new TicTacToeGame(ticTacToeGrid, firstPlayer, secondPlayer);
 
 ticTacToeGame.gameStateObservers.push(gameStateController.updateElementWithGameState);
