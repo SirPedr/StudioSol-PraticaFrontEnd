@@ -34,12 +34,6 @@ button {
     transition: 200ms;
 }
 
-
-button:hover {
-    background-color: var(--hoverBtnColor);
-    color: var(--highlightTextColor);
-}
-
 main {
     font-family: 'Fredoka One', cursive;
     padding: 1em;
@@ -78,6 +72,20 @@ h1 {
 
 h1, h2 {
     font-family: 'Roboto';
+}
+
+.closeBtn {
+    font-family: 'Fredoka One', cursive;
+    margin: 1vw;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+}
+
+.hoverableBtn:hover {
+    background-color: var(--hoverBtnColor);
+    color: var(--highlightTextColor);
 }
 
 .modal {
