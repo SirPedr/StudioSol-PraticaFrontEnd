@@ -26,6 +26,11 @@ body {
     color: var(--textMainColor);
 }
 
+body > article {
+    position: relative;
+    top: -10;
+}
+
 button {
     text-transform: uppercase;
     font-family: 'Roboto Mono', sans-serif;
@@ -206,4 +211,19 @@ h1, h2 {
 #statisticsModal article:last-of-type {
     justify-content: center;
     flex-direction: column;
+}
+
+@media (max-width: 600px) {
+    body > article {
+        width: 60vw;
+       
+    }
+
+    body > article button {
+        width: 100%;
+    }
+
+    body > article button:not(:first-child) {
+        margin-top: calc(5px + 1vw);
+    }
 }
