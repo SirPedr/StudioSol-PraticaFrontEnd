@@ -235,7 +235,7 @@ h1, h2 {
     }
 }
 
-@media (max-height: 640px) {
+@media (max-height: 780px) {
     #openPlayerNameInputsBtn {
         position: static;
     }
