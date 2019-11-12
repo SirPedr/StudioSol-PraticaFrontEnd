@@ -39,6 +39,18 @@ button {
     transition: 200ms;
 }
 
+input {
+    font-family: inherit;
+    border: none;
+    border-bottom: 2px solid var(--textMainColor);
+    padding: .5em .25em;
+}
+
+label {
+    display: block;
+    margin: 2vw 0vw;
+}
+
 main {
     font-family: 'Fredoka One', cursive;
     padding: 1em;
