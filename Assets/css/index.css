@@ -14,6 +14,7 @@
 body {
     background-color: var(--backgroundMainColor);
     display: flex;
+    margin: 0;
     flex-direction: column;
     align-items: center;
     justify-content: center;
