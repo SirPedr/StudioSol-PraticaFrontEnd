@@ -111,7 +111,9 @@ h1, h2 {
 
 .closeBtn {
     font-family: 'Fredoka One', cursive;
+    font-size: 1.5em;
     margin: 1vw;
+    padding: 0em .5em 0em 0em;
     position: absolute;
     top: 0;
     right: 0;
