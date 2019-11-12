@@ -227,4 +227,14 @@ h1, h2 {
     body > article button:not(:first-child) {
         margin-top: calc(5px + 1vw);
     }
+
+    .modal {
+        margin: 0 2vw 0 1vw;
+    }
+}
+
+@media (max-height: 640px) {
+    #openPlayerNameInputsBtn {
+        position: static;
+    }
 }
