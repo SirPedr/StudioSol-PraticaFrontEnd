@@ -173,6 +173,10 @@ h1, h2 {
     justify-content: space-between;
 }
 
+#statisticsModal article:not(:last-of-type) {
+    border-bottom: 1px solid var(--inactiveElementColor);
+}
+
 #statisticsModal article:last-of-type {
     justify-content: center;
     flex-direction: column;
