@@ -1,6 +1,6 @@
-class StatisticsModalController {
-    constructor() {
-        this.statisticModal = document.getElementById('statisticsModal');
+class StatisticsValueController {
+    constructor(statisticsModal) {
+        this.statisticModal = statisticsModal;
         this.statisticDOMElements = document.querySelectorAll('.statistics');
         this.timeStatistics = ["averageMoveTimeSpent", "totalTimeSpent", "totalGameTime"]
     }
@@ -26,13 +26,5 @@ class StatisticsModalController {
 
             statisticItem.innerHTML = statisticValue;
         })
-    }
-
-    openStatisticsModal() {
-        this.statisticModal.style.display = 'inline';
-    }
-
-    closeStatisticsModal() {
-        this.statisticModal.style.display = 'none';
     }
 }

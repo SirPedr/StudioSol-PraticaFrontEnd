@@ -14,17 +14,17 @@ resetGameBtn.addEventListener('click', () => {
     ticTacToeGame.resetGame();
 })
 
-
-const openPlayerNameInputsBtn = document.getElementById('openPlayerNameInputsBtn'),
+const changePlayerNamesModal = document.getElementById('changePlayerNamesModal'),
+      openPlayerNameInputsBtn = document.getElementById('openPlayerNameInputsBtn'),
       closePlayerNameInputsBtn = document.getElementById('closePlayerNamesModal'),
-      changePlayerNamesModal = document.getElementById('changePlayerNamesModal');
+      changeNameModalController = new UIModalOpenController(changePlayerNamesModal, true);
 
 openPlayerNameInputsBtn.addEventListener('click', () => {
-    changePlayerNamesModal.style.display = 'inline';
+   changeNameModalController.openModal();
 })
 
 closePlayerNameInputsBtn.addEventListener('click', () => {
-    changePlayerNamesModal.style.display = 'none';
+    changeNameModalController.closeModal();
 })
 
 const playerNameInputs = document.querySelectorAll('.playerNameInput'),
@@ -35,17 +35,20 @@ const playerNameInputs = document.querySelectorAll('.playerNameInput'),
 savePlayerNamesBtn.addEventListener('click', () => {
     firstPlayerNameInputController.updatePlayerName();
     secondPlayerNameInputController.updatePlayerName(); 
+    changeNameModalController.closeModal();
 })
 
-const showStatisticsModalBtn = document.getElementById('showStatisticsModalBtn'),
-      statisticsModalController = new StatisticsModalController(),
-      closeStatisticsModalBtn = document.getElementById('closeStatisticsModalBtn');
+const openStatisticsModalBtn = document.getElementById('showStatisticsModalBtn'),
+      closeStatisticsModalBtn = document.getElementById('closeStatisticsModalBtn'),
+      statisticModal = document.getElementById('statisticsModal'),
+      statisticsValuesController = new StatisticsValueController(),
+      statisticsModalOpenController = new UIModalOpenController(statisticModal, true);
 
-showStatisticsModalBtn.addEventListener('click', () => {
-    statisticsModalController.openStatisticsModal();
-    statisticsModalController.updateGameStatistics(ticTacToeGame.getStatistics());
+openStatisticsModalBtn.addEventListener('click', () => {
+    statisticsModalOpenController.openModal();
+    statisticsValuesController.updateGameStatistics(ticTacToeGame.getStatistics());
 })
 
 closeStatisticsModalBtn.addEventListener('click', () => {
-    statisticsModalController.closeStatisticsModal();
+    statisticsModalOpenController.closeModal();
 })
