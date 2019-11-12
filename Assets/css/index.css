@@ -149,6 +149,15 @@ h1, h2 {
     position: absolute;
     z-index: 9999;
 }
+
+#savePlayerNamesBtn {
+    float: right;
+}
+
+#statisticsModal p{
+    margin: 0;
+}
+
 #statisticsModal, #statisticsModal article {
     text-align: center;
 }
