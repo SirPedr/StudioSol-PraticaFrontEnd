@@ -239,4 +239,8 @@ h1, h2 {
     #openPlayerNameInputsBtn {
         position: static;
     }
+    
+    body {
+        justify-content: normal;
+    }
 }
