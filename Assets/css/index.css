@@ -120,6 +120,9 @@ h1, h2 {
     z-index: 10000;
     text-align: center;
 }
+
+.playerScore {
+    display: block;
 }
 
 #gameStateDisplay {
