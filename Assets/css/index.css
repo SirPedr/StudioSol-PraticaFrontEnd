@@ -124,6 +124,14 @@ h1, h2 {
     color: inherit;
 }
 
+#overlayContainer {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.75);
+    position: absolute;
+    z-index: 9999;
+}
 #statisticsModal, #statisticsModal article {
     text-align: center;
 }
