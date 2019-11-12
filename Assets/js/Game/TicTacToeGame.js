@@ -17,7 +17,7 @@ class TicTacToeGame {
                 })
             })
 
-        this.updateGameState(true, false, this.currentPlayer);
+        this.setGameState(true, false, this.currentPlayer);
         
     }
 
@@ -37,7 +37,7 @@ class TicTacToeGame {
             this.currentPlayer.statistics.stopMoveTimeCount();
             this.switchCurrentPlayer();
 
-            const gameCurrentState = this.hasWinner();
+            const gameCurrentState = this.recalculateGameState();
 
             if (gameCurrentState.hasWinner) {
                 gameCurrentState.currentPlayer.statistics.increaseScore();
@@ -58,7 +58,7 @@ class TicTacToeGame {
         this.currentPlayer.statistics.startMoveTimeCount();
     }
 
-    hasWinner() {
+    recalculateGameState() {
         const gridSize = this.gameTable.gridSize;        
         
         let winnerCells = [],
@@ -106,18 +106,18 @@ class TicTacToeGame {
         const fullGameTableCells = this.gameTable.getAllGridCells();
 
         if (tableHasElementsInSequence) {
-            return this.updateGameState(false, true, this.playerWhoMadeLastMove, winnerCells);
+            return this.setGameState(false, true, this.playerWhoMadeLastMove, winnerCells);
 
         } else if(GameGridCell.getValidCellsValues(fullGameTableCells).length === gridSize * gridSize) {
-            return this.updateGameState(false, false, this.currentPlayer);
+            return this.setGameState(false, false, this.currentPlayer);
 
         } else {
-            return this.updateGameState(true, false, this.currentPlayer);
+            return this.setGameState(true, false, this.currentPlayer);
         }
 
     }
 
-    updateGameState(isGameRunning, gameHasWinner, currentPlayer, winnerCells = null) {
+    setGameState(isGameRunning, gameHasWinner, currentPlayer, winnerCells = null) {
         this.currentGameState = {
             isRunning: isGameRunning,
             hasWinner: gameHasWinner,
@@ -144,7 +144,7 @@ class TicTacToeGame {
         this.currentPlayer = nextPlayer;
 
         this.gameTable.clearTable();
-        this.updateGameState(true, false, this.currentPlayer);
+        this.setGameState(true, false, this.currentPlayer);
     }
 
     getStatistics() {
