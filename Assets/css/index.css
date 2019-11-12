@@ -24,6 +24,7 @@ body {
     justify-content: center;
     height: 100vh;
     color: var(--textMainColor);
+    overflow-x: hidden;
 }
 
 body > article {
