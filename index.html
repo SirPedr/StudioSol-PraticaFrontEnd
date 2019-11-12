@@ -14,48 +14,48 @@
         <h2>Estatísticas</h2>
         <article>
             <div>
-                <p class="statistics" 
+                <strong class="statistics" 
                 data-referenced-player="firstPlayer" 
-                data-statistic-property="score">3</p>
+                data-statistic-property="score">3</strong>
 
-                <p class="statistics" 
+                <strong class="statistics" 
                 data-referenced-player="firstPlayer"
-                 data-statistic-property="name">Jogador 1</p>
+                 data-statistic-property="name">Jogador 1</strong>
             </div>
             <p>X</p>
             <div>
-                <p class="statistics"
+                <strong class="statistics"
                  data-referenced-player="secondPlayer" 
-                 data-statistic-property="score">1</p>
+                 data-statistic-property="score">1</strong>
 
-                <p class="statistics" 
+                <strong class="statistics" 
                 data-referenced-player="secondPlayer"
-                 data-statistic-property="name">Jogador 2</p>
+                 data-statistic-property="name">Jogador 2</strong>
             </div>
         </article>
 
         <article>
             <span>
-                <span class="statistics"
+                <strong class="statistics"
                  data-referenced-player="firstPlayer" 
-                 data-statistic-property="averageMoveTimeSpent">3.4s</span>
+                 data-statistic-property="averageMoveTimeSpent">3.4s</strong>
 
                 <p>Tempo médio por jogada</p>
 
-                <span class="statistics"
+                <strong class="statistics"
                  data-referenced-player="secondPlayer" 
-                 data-statistic-property="averageMoveTimeSpent">5.3s</span> 
+                 data-statistic-property="averageMoveTimeSpent">5.3s</strong> 
             </span>
             <span>
-                <span class="statistics" 
+                <strong class="statistics" 
                 data-referenced-player="firstPlayer" 
-                data-statistic-property="totalTimeSpent">10m30s</span>
+                data-statistic-property="totalTimeSpent">10m30s</strong>
 
                 <p>Tempo total jogado</p>
 
-                <span class="statistics"
+                <strong class="statistics"
                  data-referenced-player="secondPlayer" 
-                 data-statistic-property="totalTimeSpent">15m21s</span>
+                 data-statistic-property="totalTimeSpent">15m21s</strong>
             </span>
         </article>
 
@@ -70,7 +70,7 @@
         <main></main>
         <p id="gameStateDisplay">Vez de: <strong>Jogador 1</strong></p>
     </section>
-    
+
     <article>
         <button id="resetGameBtn" class="hoverableBtn">Jogar Novamente</button>
         <button id="showStatisticsModalBtn" class="hoverableBtn">Ver Estatísticas</button>
@@ -91,10 +91,11 @@
             <input type="text" class="playerNameInput">
         </label> 
 
-        <button id="savePlayerNamesBtn">Salvar</button>
+        <button id="savePlayerNamesBtn" class="hoverableBtn">Salvar</button>
         <button id="closePlayerNamesModal" class="closeBtn">X</button>
     </section>
 
+    <div id="overlayContainer"></div>
     <script src="Assets/js/Util/DateFormatUtil.js"></script>
     <script src="Assets/js/Util/RandomUtil.js"></script>
     <script src="Assets/js/Util/ArrayUtil.js"></script>
