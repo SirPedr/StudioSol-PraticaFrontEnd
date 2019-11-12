@@ -111,9 +111,15 @@ h1, h2 {
 }
 
 .modal {
+    font-family: "Roboto Mono", sans-serif;
     display: none;
+    border-radius: 15px;
     position: absolute;
     background: #FFFFFF;
+    padding: 1em;
+    z-index: 10000;
+    text-align: center;
+}
 }
 
 #gameStateDisplay {
