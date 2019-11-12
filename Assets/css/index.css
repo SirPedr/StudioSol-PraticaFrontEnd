@@ -92,6 +92,19 @@ h1 {
     text-transform: uppercase;
 }
 
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header img {
+    transform: rotate(-10deg);
+    width: 28px;
+    height: auto;
+    margin-right: calc(10px + .5vw);
+    box-shadow: 0 0 black;
+}
+
 h1, h2 {
     font-family: 'Roboto';
 }
