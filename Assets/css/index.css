@@ -121,6 +121,12 @@ h1, h2 {
     text-align: center;
 }
 
+.directComparisonStatistics {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-evenly;
+}
+
 .playerScore {
     display: block;
 }
