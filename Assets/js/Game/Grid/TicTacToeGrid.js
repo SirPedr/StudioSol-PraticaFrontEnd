@@ -26,8 +26,6 @@ class TicTacToeGrid {
         const cellDOMEl = document.createElement('span');
         
         cellDOMEl.innerHTML = '';
-        cellDOMEl.dataset.rowNumber = rowPosition;
-        cellDOMEl.dataset.colNumber = colPosition;
         
         return new GameGridCell(cellDOMEl);
     }
