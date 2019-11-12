@@ -171,6 +171,8 @@ h1, h2 {
 #statisticsModal article{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 1em;
 }
 
 #statisticsModal article:not(:last-of-type) {
