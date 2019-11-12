@@ -36,10 +36,11 @@ button {
     font-family: 'Roboto Mono', sans-serif;
     font-weight: 900;
     margin: 0vw .5vw;
+    padding: 1em 2em;
     color: inherit;
     background-color: transparent;
     border: 2px solid var(--hoverBtnColor);
-    border-radius: 20px;
+    border-radius: 12px;
     cursor: pointer;
     transition: 200ms;
 }
